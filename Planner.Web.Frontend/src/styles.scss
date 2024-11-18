@@ -1,0 +1,88 @@
+@import "~@angular/material/theming";
+@include mat-core();
+
+$light-app-theme: mat-light-theme(
+  (
+    color: (
+      primary: mat-palette($mat-indigo, 700, 300, 900),
+      accent: mat-palette($mat-light-blue),
+      warn: mat-palette($mat-deep-orange, A200),
+    ),
+  )
+);
+
+$dark-app-theme: mat-dark-theme(
+  (
+    color: (
+      primary: mat-palette($mat-blue-gray),
+      accent: mat-palette($mat-amber, A200, A100, A400),
+      warn: mat-palette($mat-deep-orange),
+    ),
+  )
+);
+
+@include angular-material-theme($light-app-theme);
+
+.dark-theme {
+  @include angular-material-color($dark-app-theme);
+}
+
+/* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+mat-sidenav-content {
+  [mat-table] {
+    background-color: #d9d9d9;
+  }
+}
+
+.mat-drawer-container {
+  overflow: scroll !important;
+  display: flex !important;
+  grid-gap: 10px !important;
+  padding: 10px;
+}
+
+.mat-drawer-content {
+  height: 100vh !important;
+  flex-grow: 1 !important;
+  position: unset !important;
+  margin: 0px !important;
+}
+
+.dark-theme .mat-drawer-content {
+  background-color: #424242;
+}
+
+.mat-drawer-inner-container {
+  background-color: #d9d9d9;
+}
+
+.dark-theme .mat-drawer-inner-container {
+  background-color: #424242;
+}
+
+.mat-drawer {
+  position: unset !important;
+}
+
+.mat-button {
+  border-radius: 10px !important;
+}
+
+.mat-card {
+  border-radius: 20px !important;
+}
+
+.mat-raised-button {
+  border-radius: 10px !important;
+}

@@ -1,0 +1,18 @@
+<mat-toolbar color="primary">
+
+  <button *ngIf="isAuthenticated" mat-button (click)="toggle()" matTooltip="Toggle sidebar">
+    <mat-icon>menu</mat-icon>
+  </button>
+
+  <button mat-button class="title" routerLink="/">{{title}}</button>
+
+  <div class="flex-spacer"></div>
+  <mat-label *ngIf="isAuthenticated">{{userEmail}}</mat-label>
+
+  <app-theme-switch></app-theme-switch>
+
+  <a *ngIf="isAuthenticated" mat-button (click)="logout()" matTooltip="Logout">
+    <mat-icon>logout</mat-icon>
+  </a>
+
+</mat-toolbar>
