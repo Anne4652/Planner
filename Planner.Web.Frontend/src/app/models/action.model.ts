@@ -12,7 +12,7 @@ export interface Action {
   isDone: boolean,
   isFocused: boolean,
 
-  timeRequired?: number, // int minutes
+  timeRequired?: number, // хвилини
   energy?: ActionEnergy,
   dueDate?: Date,
 
@@ -21,9 +21,6 @@ export interface Action {
   labelTags?: LabelTag[],
 
   projectId?: number,
-
-  // waitingContact?: ContactTag,
-  // scheduledDate?: Date,
 
   isEdit: boolean
 }
@@ -44,13 +41,13 @@ export const BaseActionColumns = [
   {
     key: 'text',
     type: 'text',
-    label: 'Text',
+    label: 'Текст',
     colWidth: `20%`,
   },
   {
     key: 'state',
     type: 'select',
-    label: 'State',
+    label: 'Стан',
     selectItems: Object.values(ActionState).filter(o => typeof (o) === 'string'),
     colWidth: '5%',
     onlyEdit: true,
@@ -58,34 +55,34 @@ export const BaseActionColumns = [
   {
     key: 'timeRequired',
     type: 'select',
-    label: 'Time Required',
-    selectItems: [null, '5 minutes', '10 minutes', '15 minutes', '30 minutes', '45 minutes',
-      '1 hour', '2 hours', '3 hours', '4 hours', '6 hours', '8 hours', 'whoa nelly!'],
+    label: 'Час, необхідний',
+    selectItems: [null, '5 хвилин', '10 хвилин', '15 хвилин', '30 хвилин', '45 хвилин',
+      '1 година', '2 години', '3 години', '4 години', '6 годин', '8 годин', 'ого, це багато!'],
     colWidth: '7%',
   },
   {
     key: 'energy',
     type: 'select',
-    label: 'Energy',
+    label: 'Енергія',
     selectItems: [null, ...Object.values(ActionEnergy).filter(o => typeof (o) === 'string')],
     colWidth: '4%',
   },
   {
     key: 'dueDate',
     type: 'date',
-    label: 'Due date',
+    label: 'Кінцевий термін',
     colWidth: '7%',
   },
   {
     key: 'projectId',
     type: 'projectSelect',
-    label: 'Project',
+    label: 'Категорія',
     colWidth: '10%',
   },
   {
     key: 'tags',
     type: 'tags',
-    label: 'Tags',
+    label: 'Теги',
     colWidth: '30%',
   },
 

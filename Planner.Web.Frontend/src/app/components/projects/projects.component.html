@@ -2,7 +2,7 @@
   <div class="flex-spacer"></div>
 
   <button mat-button class="button-add-row" mat-button (click)="addRow()">
-    Add project
+    Додати проєкт
   </button>
 </div>
 <table mat-table [dataSource]="dataSource">
@@ -14,10 +14,10 @@
       <div [ngSwitch]="col.type" *ngIf="!element.isEdit">
         <div class="btn-edit" *ngSwitchCase="'isEdit'">
           <button mat-button (click)="element.isEdit = !element.isEdit">
-            Edit
+            Редагувати
           </button>
           <button mat-button class="button-remove" (click)="removeRow(element.id)">
-            Delete
+            Видалити
           </button>
         </div>
 
@@ -34,11 +34,11 @@
         <div *ngSwitchCase="'isFocused'"></div>
         <div class="btn-edit" *ngSwitchCase="'isEdit'">
           <button mat-button (click)="editRow(element)" [disabled]="disableSubmit(element.id)">
-            Done
+            Готово
           </button>
         </div>
         <mat-form-field class="form-input" *ngSwitchCase="'date'" appearance="fill">
-          <mat-label>Choose a date</mat-label>
+          <mat-label>Оберіть дату</mat-label>
           <input matInput [matDatepicker]="picker" [(ngModel)]="element[col.key]" />
           <mat-datepicker-toggle matSuffix></mat-datepicker-toggle>
           <mat-datepicker #picker></mat-datepicker>
@@ -46,7 +46,7 @@
 
         <mat-form-field class="form-input" *ngSwitchCase="'select'" appearance="fill">
           <mat-select [(value)]="element[col.key]" class="form-select">
-            <mat-option *ngFor="let i of col.selectItems" [value]="i">{{ i ?? 'None' }}</mat-option>
+            <mat-option *ngFor="let i of col.selectItems" [value]="i">{{ i ?? 'Немає' }}</mat-option>
           </mat-select>
         </mat-form-field>
 

@@ -56,3 +56,12 @@ h2 {
 .form-select {
   min-width: 128px;
 }
+
+.color-option {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  border-radius: 50%;
+  margin-right: 8px;
+  border: 1px solid #ccc;
+}

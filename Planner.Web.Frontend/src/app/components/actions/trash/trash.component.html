@@ -1,11 +1,11 @@
 <div class="table-buttons">
   <div class="flex-spacer"></div>
   <button class="button-remove-rows" mat-button (click)="removeSelectedRows()" *ngIf="isAnySelected">
-    Remove Rows
+    Видалити рядки
   </button>
 
   <button mat-button class="button-remove-rows" mat-button (click)="removeAllRows()">
-    Remove all rows
+    Видалити всі рядки
   </button>
 </div>
 <table mat-table [dataSource]="dataSource">
@@ -20,37 +20,36 @@
         </ng-container>
         <div class="btn-edit" *ngSwitchCase="'isEdit'">
           <button mat-button (click)="element.isEdit = !element.isEdit">
-            Edit
+            Редагувати
           </button>
           <button mat-button class="button-remove" (click)="removeRow(element.id)">
-            Delete
+            Видалити
           </button>
         </div>
         <span *ngSwitchCase="'date'">
-                    {{ element[col.key] | date: 'mediumDate' }}
-                </span>
+          {{ element[col.key] | date: 'mediumDate' }}
+        </span>
         <span *ngSwitchDefault>
-                    {{ element[col.key] }}
-                </span>
+          {{ element[col.key] }}
+        </span>
       </div>
-
 
       <div [ngSwitch]="col.type" *ngIf="element.isEdit">
         <div *ngSwitchCase="'isSelected'"></div>
         <div class="btn-edit" *ngSwitchCase="'isEdit'">
           <button mat-button (click)="editRow(element)" [disabled]="disableSubmit(element.id)">
-            Done
+            Готово
           </button>
         </div>
         <mat-form-field class="form-input" *ngSwitchCase="'date'" appearance="fill">
-          <mat-label>Choose a date</mat-label>
+          <mat-label>Оберіть дату</mat-label>
           <input matInput [matDatepicker]="picker" [(ngModel)]="element[col.key]" />
           <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
           <mat-datepicker #picker></mat-datepicker>
         </mat-form-field>
         <mat-form-field class="form-input" *ngSwitchCase="'select'" appearance="fill">
           <p>{{element.selectItems}}</p>
-          <mat-label>Choose a color</mat-label>
+          <mat-label>Оберіть колір</mat-label>
           <mat-select [(value)]="element.color" class="form-select">
             <mat-option *ngFor="let i of col.selectItems" [value]="i">{{ i ?? '--' }}</mat-option>
           </mat-select>

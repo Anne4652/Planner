@@ -16,6 +16,7 @@ import {SomedayComponent} from "./components/actions/someday/someday.component";
 import {FocusComponent} from "./components/actions/focus/focus.component";
 import {ProjectListComponent} from "./components/actions/project-list/project-list.component";
 import {ProjectsComponent} from "./components/projects/projects.component";
+import { HabitsComponent } from './components/habits/habits.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'list/next', pathMatch: 'full' },
@@ -23,6 +24,7 @@ const routes: Routes = [
   { path: 'logout', component: LogoutComponent },
   { path: 'signup', component: SignupComponent },
   { path: 'list/inbox', component: InboxComponent, canActivate: [AuthGuardService] },
+  { path: 'list/habits', component: HabitsComponent, canActivate: [AuthGuardService] },
   { path: 'list/someday', component: SomedayComponent, canActivate: [AuthGuardService] },
   { path: 'list/next', component: NextComponent, canActivate: [AuthGuardService] },
   { path: 'list/done', component: DoneComponent, canActivate: [AuthGuardService] },

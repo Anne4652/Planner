@@ -15,7 +15,7 @@
       <mat-accordion multi="true" style="padding: 0">
         <mat-expansion-panel class="expansion-panel" expanded="true">
           <mat-expansion-panel-header>
-            <mat-panel-title>CAPTURE</mat-panel-title>
+            <mat-panel-title>ЗАХОПЛЕННЯ</mat-panel-title>
           </mat-expansion-panel-header>
 
           <a
@@ -25,11 +25,11 @@
             routerLink="list/inbox"
           >
             <mat-icon class="sidebar-icon">inbox</mat-icon>
-            Inbox
+            Вхідні
           </a>
-          <a mat-button class="sidenav-item" routerLinkActive="sidenav-item-active" routerLink="list/sheduled">
+          <a mat-button class="sidenav-item" routerLinkActive="sidenav-item-active" routerLink="list/habits">
             <mat-icon class="sidebar-icon">calendar_today</mat-icon>
-            Habits
+            Звички
           </a>
         </mat-expansion-panel>
 
@@ -37,7 +37,7 @@
 
         <mat-expansion-panel class="expansion-panel" expanded="true">
           <mat-expansion-panel-header>
-            <mat-panel-title>ACTIONS</mat-panel-title>
+            <mat-panel-title>ДІЇ</mat-panel-title>
           </mat-expansion-panel-header>
 
           <a
@@ -47,18 +47,8 @@
             routerLink="list/next"
           >
             <mat-icon class="sidebar-icon">access_time</mat-icon>
-            Next
+            Наступні
           </a>
-                   <!-- <br>
-                   <a mat-button class="sidenav-item" routerLinkActive="sidenav-item-active" routerLink="list/waiting">
-                     <mat-icon class="sidebar-icon">coffee</mat-icon>
-                      Waiting
-                   </a>
-                   <br> -->
-                   <!-- <a mat-button class="sidenav-item" routerLinkActive="sidenav-item-active" routerLink="list/sheduled">
-                     <mat-icon class="sidebar-icon">calendar_today</mat-icon>
-                     Sheduled
-                   </a> -->
           <br />
           <a
             mat-button
@@ -67,7 +57,7 @@
             routerLink="list/someday"
           >
             <mat-icon class="sidebar-icon">settings_brightness</mat-icon>
-            Someday
+            Колись
           </a>
           <mat-divider></mat-divider>
           <a
@@ -77,7 +67,7 @@
             routerLink="list/focus"
           >
             <mat-icon class="sidebar-icon">star_border</mat-icon>
-            Focus
+            Фокус
           </a>
           <a
             mat-button
@@ -86,14 +76,14 @@
             routerLink="list/done"
           >
             <mat-icon class="sidebar-icon">done</mat-icon>
-            Done
+            Виконані
           </a>
         </mat-expansion-panel>
 
         <mat-divider></mat-divider>
         <mat-expansion-panel class="expansion-panel" expanded="true">
           <mat-expansion-panel-header>
-            <mat-panel-title>PROJECTS</mat-panel-title>
+            <mat-panel-title>КАТЕГОРІЇ</mat-panel-title>
           </mat-expansion-panel-header>
 
           <a
@@ -102,8 +92,8 @@
             routerLinkActive="sidenav-item-active"
             routerLink="project"
           >
-            <mat-icon class="sidebar-icon">work_outline</mat-icon>
-            Projects
+            <mat-icon class="sidebar-icon">folder</mat-icon>
+            Категорії
           </a>
 
           <mat-divider></mat-divider>
@@ -115,16 +105,15 @@
             routerLinkActive="sidenav-item-active"
             [routerLink]="'list/project/' + project.id"
           >
-            <mat-icon class="sidebar-icon">work_outline</mat-icon>
+            <mat-icon class="sidebar-icon">folder</mat-icon>
             {{ project.name }}
           </a>
-          <!--          <br>-->
         </mat-expansion-panel>
 
         <mat-divider></mat-divider>
         <mat-expansion-panel class="expansion-panel" expanded="true">
           <mat-expansion-panel-header>
-            <mat-panel-title>TAGS</mat-panel-title>
+            <mat-panel-title>ТЕГИ</mat-panel-title>
           </mat-expansion-panel-header>
 
           <a
@@ -134,7 +123,7 @@
             routerLink="tags/labels"
           >
             <mat-icon class="sidebar-icon">label</mat-icon>
-            Labels
+            Мітки
           </a>
           <br />
           <a
@@ -144,7 +133,7 @@
             routerLink="tags/contacts"
           >
             <mat-icon class="sidebar-icon">perm_contact_calendar</mat-icon>
-            Contacts
+            Контакти
           </a>
           <br />
           <a
@@ -154,7 +143,7 @@
             routerLink="tags/areas"
           >
             <mat-icon class="sidebar-icon">home</mat-icon>
-            Areas
+            Області
           </a>
         </mat-expansion-panel>
 
@@ -162,7 +151,7 @@
 
         <mat-expansion-panel class="expansion-panel" expanded="true">
           <mat-expansion-panel-header>
-            <mat-panel-title>CLEANUP</mat-panel-title>
+            <mat-panel-title>ОЧИЩЕННЯ</mat-panel-title>
           </mat-expansion-panel-header>
 
           <a
@@ -172,7 +161,7 @@
             routerLink="list/trash"
           >
             <mat-icon class="sidebar-icon">delete_outline</mat-icon>
-            Trash
+            Кошик
           </a>
         </mat-expansion-panel>
       </mat-accordion>

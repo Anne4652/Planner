@@ -1,6 +1,6 @@
 <mat-toolbar color="primary">
 
-  <button *ngIf="isAuthenticated" mat-button (click)="toggle()" matTooltip="Toggle sidebar">
+  <button *ngIf="isAuthenticated" mat-button (click)="toggle()" matTooltip="Перемкнути бічну панель">
     <mat-icon>menu</mat-icon>
   </button>
 
@@ -11,7 +11,7 @@
 
   <app-theme-switch></app-theme-switch>
 
-  <a *ngIf="isAuthenticated" mat-button (click)="logout()" matTooltip="Logout">
+  <a *ngIf="isAuthenticated" mat-button (click)="logout()" matTooltip="Вийти">
     <mat-icon>logout</mat-icon>
   </a>
 

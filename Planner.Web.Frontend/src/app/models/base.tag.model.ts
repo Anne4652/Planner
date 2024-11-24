@@ -4,7 +4,6 @@ export interface BaseTag {
   id: number,
   name: string,
   color?: Color,
-
   isSelected: boolean,
   isEdit: boolean,
 }
@@ -19,16 +18,15 @@ export const BaseTagColumns = [
   {
     key: 'name',
     type: 'text',
-    label: 'Name',
+    label: 'Назва',
     required: true,
   },
   {
     key: 'color',
-    type: 'select',
-    label: 'Color',
-    selectItems: [null, ...Object.values(Color).filter(o => typeof (o) === 'string')]
+    type: 'colorSelect',
+    label: 'Колір',
+    selectItems: [null, ...Object.values(Color).filter(o => typeof (o) === 'string')],
   },
-
 
   {
     key: 'isEdit',

@@ -1,0 +1,41 @@
+<div class="habits-container">
+  <div class="habit-header">
+    <h2>Звички</h2>
+    <button mat-raised-button (click)="addHabit()">Додати звичку</button>
+  </div>
+  <div class="habits-grid">
+    <div
+      *ngFor="let habit of habits"
+      class="habit-card"
+      (dblclick)="editHabitName(habit)"
+    >
+      <div class="habit-title">
+        <input
+          *ngIf="habit.editing"
+          [(ngModel)]="habit.name"
+          (blur)="saveHabitName(habit)"
+          placeholder="Введіть назву звички"
+        />
+        <h3 *ngIf="!habit.editing">{{ habit.name }}</h3>
+        <button mat-icon-button (click)="deleteHabit(habit)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </div>
+      <div class="habit-calendar">
+        <!-- Рядок днів тижня -->
+        <div class="calendar-header" *ngFor="let weekday of weekdays">
+          {{ weekday }}
+        </div>
+        <!-- Дні місяця -->
+        <div
+          *ngFor="let day of habit.days"
+          class="calendar-day"
+          [ngClass]="day.color"
+          (click)="toggleDay(habit, day.date)"
+        >
+          {{ day.date || '' }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

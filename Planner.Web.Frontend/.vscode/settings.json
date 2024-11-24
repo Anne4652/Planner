@@ -3,8 +3,8 @@
   "editor.detectIndentation": false,
   "editor.formatOnSave": true,
   "editor.codeActionsOnSave": {
-    "source.organizeImports": false,
-    "source.fixAll.tslint": true
+    "source.organizeImports": "never",
+    "source.fixAll.tslint": "explicit"
   },
   "tslint.configFile": "tslint.json",
   "typescriptHero.imports.organizeOnSave": true,

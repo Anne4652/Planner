@@ -34,7 +34,6 @@ export class ThemeSwitchComponent implements OnInit {
       this.selectDarkTheme();
     }
 
-    // TODO: save this.isDark to local storage
     localStorage.setItem(THEME_IS_DARK, this.isDark.toString());
   }
 
